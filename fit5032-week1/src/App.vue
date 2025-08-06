@@ -1,7 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import Sanjeeva from './components/Sanjeeva.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import Sanjeeva from './components/Sanjeeva.vue'
 </script>
 
 <template>
@@ -14,8 +14,8 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
     <Sanjeeva />
+    <TheWelcome />
   </main>
 </template>
 
