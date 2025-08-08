@@ -117,7 +117,15 @@
 
     <section class="lab-section">
       <h2>Attribute, Class and Style Binding with <code>v-bind</code></h2>
-      <p>Highlighting Specific Authors:</p>
+      <h4>Highlighting Only Specific Authors:</h4>
+      <p>Only highlighting authors who were born after 1850</p>
+      <ul>
+        <li v-for="author in authors"
+        :key="author.id"
+        :class="{highlight: author.birthYear > 1850}">
+        {{ author.name }} ({{ author.birthYear }})
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -131,6 +139,7 @@ import authors from '@/assets/json/authors.json'
 import bookstores from '@/assets/json/bookstores.json'
 
 const showMessage = ref(false)
+const isActive = ref(false)
 
 // Activity 2: Get authors born after 1850
 const modernAuthors = computed(() => authors.filter((author) => author.birthYear > 1850))
@@ -212,5 +221,17 @@ li {
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
+}
+.active {
+  background-color: #42b883;
+  color: white;
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
 }
 </style>
