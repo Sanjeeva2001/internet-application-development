@@ -133,11 +133,8 @@
       <ul>
       <li v-for="author in authors" 
         :key="author.id"
-        :style="{ 
-          color: author.birthYear > 1850 ? '#42b883' : '#666',
-          fontWeight: author.birthYear > 1850 ? 'bold' : 'normal'
-        }">
-      {{ author.name }} - {{ author.birthYear > 1850 ? 'Modern' : 'Classic' }}
+        :class="author.birthYear > 1850 ? 'modern-author' : 'classic-author'">
+        {{ author.name }} - {{ author.birthYear > 1850 ? 'Modern' : 'Classic' }}
       </li>
       </ul>
 
@@ -235,5 +232,13 @@ li {
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
+}
+.modern-author {
+  color: #42b883;
+  font-weight: bold;
+}
+.classic-author {
+  color: #666;
+  font-weight: normal;
 }
 </style>
